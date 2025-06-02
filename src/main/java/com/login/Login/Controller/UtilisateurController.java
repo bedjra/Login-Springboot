@@ -1,6 +1,8 @@
 package com.login.Login.Controller;
 
+import com.login.Login.Entity.Utilisateur;
 import com.login.Login.service.UtilisateurService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,8 +19,8 @@ public class UtilisateurController {
     private UtilisateurService utilisateurService;
 
 
-//    @Autowired
-//    private JwtUtil jwtUtil;
-
-
+    @PostMapping("/register")
+    public Utilisateur saveUtilisateur(@Valid @RequestBody Utilisateur utilisateur) {
+        return utilisateurService.saveUtilisateur(utilisateur);
+    }
 }

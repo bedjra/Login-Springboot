@@ -15,12 +15,5 @@ import org.springframework.web.bind.annotation.*;
 
 public class UtilisateurController {
 
-    @Autowired
-    private UtilisateurService utilisateurService;
-
-
-    @PostMapping("/register")
-    public Utilisateur saveUtilisateur(@Valid @RequestBody Utilisateur utilisateur) {
-        return utilisateurService.saveUtilisateur(utilisateur);
-    }
+   
 }
